@@ -1,0 +1,23 @@
+#menu-container{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+}
+
+.menu-list{
+    border: 1px solid magenta;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+    width: 200px;
+}
+
+.menu-item{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.menu-image{
+    width: 300;
+}
