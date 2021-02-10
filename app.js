@@ -15,7 +15,7 @@ const displayMeals = meals => {
         const menuDiv = document.createElement('div');
         menuDiv.className = 'menu-list';
         const menuList = `
-        <img class="img-fluid img-thumbnail mx-auto" src = "$(meal.strMealThumb)" >
+        <img class="img-fluid menu-img" src = "${meal.strMealThumb}">
         <h3 class="menu-item">${meal.strMeal}</h3>
     `;
         menuDiv.innerHTML = menuList;

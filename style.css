@@ -5,19 +5,16 @@
 }
 
 .menu-list{
-    border: 1px solid magenta;
-    border-radius: 20px;
-    padding: 20px;
-    margin: 20px;
-    text-align: center;
-    width: 200px;
+    text-align: center; 
 }
 
 .menu-item{
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 700;
 }
 
-.menu-image{
-    width: 300;
+.menu-img{
+    border: 1px solid  transparent;
+    border-radius: 10px;
+    width: 200px;
 }
