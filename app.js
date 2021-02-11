@@ -21,8 +21,6 @@ const displayMeals = meals => {
     const menuContainer = document.getElementById("menu-container");
 
     meals.forEach(meal => {
-
-
         const menuDiv = document.createElement('div');
         menuDiv.className = 'menu-list';
         const menuList = `
@@ -37,13 +35,12 @@ const displayMeals = meals => {
 
 }
 
-
 const displayIngredients = (name, img, str1, str2, str3, str4, str5, str6) => {
     const ingredientContainer = document.getElementById("ingredient-container");
     const ingredientDiv = document.createElement('div');
     const ingredientList = `
         <h3>${name}</h3>
-        <img src = "${img + '/preview'}"/>    
+        <img class="py-3" src = "${img + '/preview'}"/>    
         <ul>
             <li>${str1}</li>
             <li>${str2}</li>
