@@ -10,8 +10,10 @@ const searchMenu = () => {
 
         fetch(url)
             .then(res => res.json())
-            .then(data => displayMeals(data.meals))
-            .catch(error => document.getElementById('error-message').innerText = "Search Not Found")
+            .then(data => {
+                displayMeals(data.meals)
+            })
+            .catch(error => document.getElementById('error-message').innerText = "Data Not Found")
     }
 
 }
@@ -24,7 +26,7 @@ const displayMeals = meals => {
         const menuDiv = document.createElement('div');
         menuDiv.className = 'menu-list';
         const menuList = `
-            <div id="meal-info" onclick="menuIngredients('${meal.strMeal}')">
+            <div onclick="displayIngredients('${meal.strMeal}', '${meal.strMealThumb}', '${meal.strIngredient1}', '${meal.strIngredient2}', '${meal.strIngredient3}','${meal.strIngredient4}','${meal.strIngredient5}','${meal.strIngredient6}' )" id="meal-info" >
         <img class="img-fluid menu-img" src = "${meal.strMealThumb}"/>
         <h3 class="menu-item">${meal.strMeal}</h3>
             </div>
@@ -35,19 +37,23 @@ const displayMeals = meals => {
 
 }
 
-const menuIngredients = meals => {
-    const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${meals}`
-    fetch(url)
-        .then(res => res.json())
-        .then(data => console.log(data))
+
+const displayIngredients = (name, img, str1, str2, str3, str4, str5, str6) => {
+    const ingredientContainer = document.getElementById("ingredient-container");
+    const ingredientDiv = document.createElement('div');
+    const ingredientList = `
+        <h3>${name}</h3>
+        <img src = "${img + '/preview'}"/>    
+        <ul>
+            <li>${str1}</li>
+            <li>${str2}</li>
+            <li>${str3}</li>
+            <li>${str4}</li>
+            <li>${str5}</li>
+            <li>${str6}</li>
+        </ul>
+    `;
+    ingredientDiv.innerHTML = ingredientList;
+    ingredientContainer.appendChild(ingredientDiv)
+
 }
-
-
-
-
-
-
-
-
-
-
